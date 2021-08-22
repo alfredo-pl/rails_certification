@@ -40,7 +40,17 @@
     <%= form.label :generation %>
     <%= form.number_field :generation %>
   </div>
-
+<div class="field">
+    <%= form.label :courses %>
+      <%= form.collection_check_boxes(:course_ids,
+        Course.all,
+        :id,
+        :name) do |b| %>
+        <%= b.label class:"label-checkbox" do%>
+        <%=b.check_box + b.text%>
+      <%end%>
+    <% end %>
+</div>
   <div class="field">
     <%= form.label :end_date %>
     <%= form.date_select :end_date %>
