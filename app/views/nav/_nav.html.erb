@@ -1,0 +1,15 @@
+
+<div class="ui secondary pointing menu">
+    <% if current_user.admin?%>
+        <div class="item active">
+            <%=link_to 'Estudiantes', students_path%>
+        </div>
+        <div class="item">
+            <%=link_to 'Cursos', courses_path%>
+        </div>
+        
+        <div class="right menu">
+            <%=link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class:"ui item"%>
+        </div>
+    <%end%>
+</div>
