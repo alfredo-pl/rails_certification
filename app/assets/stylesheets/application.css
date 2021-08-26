@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+:root{
+    --bg-one:#efefef;
+}
+ .h-100{
+     height: 100%;
+ }
+ .h-fit{
+     height: fit-content;
+ }
+ .w-100{
+     width: 100%;
+ }
+ .w-75{
+    width: 75%;
+}
+.bg-one{
+    background-color: var(--bg-one);
+}
