@@ -1,2 +1,43 @@
-<h1>Dashboard#home</h1>
-<p>Find me in app/views/dashboard/home.html.erb</p>
+<div class="ui middle aligned center aligned grid h-100 bg-one">
+    <div class="row">
+      <div class="five wide column">
+        <%= render 'form'%>
+      </div>      
+    </div>      
+     <%if @student.nil? && @existe%>
+      <% elsif @student && !@existe %>
+        
+          <div class="ui negative message h-fit">
+            <i class="close icon"></i>
+            <div class="header">
+              Estudiante no encontrado.
+            </div>
+            <p>Verifique su run</p>
+          </div>
+        
+      <% else %>
+       <div class="ui top attached w-75">
+       
+              <table class="ui teal celled table">
+                <thead>
+                  <tr><th>NAME</th>
+                  <th>RUN</th>
+                  <th>EMAIL</th>
+                  <th>GENERATION</th>
+                </tr></thead>
+                <tbody>
+                  <% @student.each do |student| %>
+                      <tr>
+                      <td data-label="NAME"><%=student.name%></td>
+                      <td data-label="RUN"><%=student.run%></td>
+                      <td data-label="EMAIL"><%=student.email%></td>
+                      <td data-label="GENERATION"><%=student.generation%></td>
+                      </tr>
+                  <% end %>
+                </tbody>
+              </table>
+        </div>      
+      <% end %>
+</div>
+    
+     
