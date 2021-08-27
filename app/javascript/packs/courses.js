@@ -1,3 +1,4 @@
 $(document).ready(function () {
-    console.log("aqui cursos")
+    $("#nav div.item").first().removeClass("active");
+    $("#nav div.item").last().addClass("active");
 })
