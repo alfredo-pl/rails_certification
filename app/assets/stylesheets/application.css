@@ -31,3 +31,25 @@
 .bg-one{
     background-color: var(--bg-one);
 }
+
+.mr-2{
+    margin-right: 2rem!important;
+}
+.mt-2{
+    margin-top: 2rem!important;
+}
+footer{
+    background-color: #00b5ad;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+footer p {
+    color: white;
+}
+.m-0{
+    margin: 0px!important;
+}
