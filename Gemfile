@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'pg', '~> 1.1'
 gem 'devise'
 gem 'kaminari'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
