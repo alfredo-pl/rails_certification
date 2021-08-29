@@ -24,6 +24,7 @@
                   <th>RUN</th>
                   <th>EMAIL</th>
                   <th>GENERATION</th>
+                  <th>CERTIFICATION</th>
                 </tr></thead>
                 <tbody>
                   <% @student.each do |student| %>
@@ -32,6 +33,7 @@
                       <td data-label="RUN"><%=student.run%></td>
                       <td data-label="EMAIL"><%=student.email%></td>
                       <td data-label="GENERATION"><%=student.generation%></td>
+                      <td data-label="GENERATION"><%= link_to 'Certificacion', certification_path(student.run) %></td>
                       </tr>
                   <% end %>
                 </tbody>
