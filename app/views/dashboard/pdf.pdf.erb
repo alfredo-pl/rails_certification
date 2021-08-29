@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+    <title>Certificación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,400&display=swap" rel="stylesheet">
+  </head>
+<%= wicked_pdf_stylesheet_link_tag 'pdf'%>
+  <body>
+    <header>
+        <%= image_tag wicked_pdf_asset_base64('logo-cbcl.jpg') %>
+    </header>
+    <h1>Certificado</h1>
+    <div class="content">
+     <% @student.each do |student| %>
+        <p>C.B.C.L CHILE, Centro de Capacitación y Formación Bancaria de Chile, certifica que </p>
+            <h3><%= student.name %>, RUT <%= student.run %></h3>
+        <p>ha realizado el curso:</p>
+            <h3>Cajero Bancario en <%= student.courses.map(&:name).join('y ')  %></h3>
+        <p>cumpliendo con el correspondiente Plan de Estudio del Programa Especial de
+        Inserción Laboral, contemplado en los estatutos de nuestra institución de
+        capacitación, obteniendo aprobación satisfactoria en las evaluaciones del curso.</p>
+        
+        <p>El curso Cajero Bancario en Moneda Nacional y Extranjera, fueron aprobados
+        el día <%=student.end_date%>, teniendo una duración de 30 días calendario.</p>
+        
+        <p>Se extiende el presente certificado a petición del interesado, para los fines que
+        estime conveniente.</p>
+    
+    <div class="firm">
+        <%= image_tag wicked_pdf_asset_base64("selloyfirmaCBCL.png") %>
+        <div class="director">
+            <div class="line"></div>
+            <p>Gonzalo Gálves Fuetes</p>
+            <p>Director Académico</p>
+        </div>
+    </div>
+    <% end %>
+    
+    </div>
+    <footer>
+        <a href="mailto:coordinacion@cbclvirtual.cl">CBCL - París 838, of. 305, 306, piso 2, Santiago. coordinacion@cbclvirtual.cl</a>
+    </footer>
+  </body>
+</html>
