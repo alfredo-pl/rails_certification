@@ -33,8 +33,16 @@
                       <td data-label="RUN"><%=student.run%></td>
                       <td data-label="EMAIL"><%=student.email%></td>
                       <td data-label="GENERATION"><%=student.generation%></td>
-                      <td data-label="GENERATION"><%= link_to 'Certificacion', certification_path(student.run) %></td>
+                      <td data-label="CERTIFICATION">
+                        <%= link_to(certification_path(student.run),class:"ui right labeled olive inverted icon button") do%>
+                            Certificación<i class="download icon"></i>
+                        <% end %>
+                        <%= link_to(diploma_path(student.run),class:"ui right labeled green inverted icon button") do%>
+                            Diploma<i class="download icon"></i>
+                        <% end %>
+                        </td>
                       </tr>
+                    
                   <% end %>
                 </tbody>
               </table>

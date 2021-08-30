@@ -1,5 +1,5 @@
 <%= render 'nav/nav' %>
-<div class="ui container-fluid">
+<div class="ui container-fluid px-5">
 <h1 class="ui header teal align centered mt-2">Estudiantes</h1>
   <div class="ui grid">
     <div class="row">
@@ -41,9 +41,22 @@
         <td><%= student.generation %></td>
         <td><%= student.courses.map(&:name).join(',')  %></td>
         <td><%= student.end_date %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+         <%= link_to(student) do%>
+            <i class="eye icon"></i>
+          <% end %>
+        </td>
+        <td>
+         <%= link_to(edit_student_path(student)) do%>
+            <i class="edit black icon"></i>
+          <% end %>
+        </td>
+        <td>
+         <%= link_to(student,method: :delete, data: { confirm: 'Are you sure?' }  ) do%>
+            <i class="trash alternate red icon"></i>
+          <% end %>
+          </td>
+  
       </tr>
     <% end %>
   </tbody>
