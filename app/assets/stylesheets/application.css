@@ -38,6 +38,16 @@
 .mt-2{
     margin-top: 2rem!important;
 }
+.px-5{
+    padding-right: 5rem;
+    padding-left: 5rem;
+}
+.text-center{
+    text-align: center;
+}
+.m-auto{
+    margin: 0 auto;
+}
 footer{
     background-color: #00b5ad;
     

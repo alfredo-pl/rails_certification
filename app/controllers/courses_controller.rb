@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!
   # GET /courses or /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.all.page params[:page]
   end
 
   # GET /courses/1 or /courses/1.json

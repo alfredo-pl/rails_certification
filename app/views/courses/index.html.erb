@@ -1,12 +1,25 @@
 <%= render 'nav/nav' %>
+<div class="ui container-fluid px-5">
+<h1 class="ui header teal align centered mt-2">Cursos</h1>
+  <div class="ui grid">
+    <div class="row">
+        <div class="ui search eight wide column">
+            <div class="ui icon input">
+              <input class="prompt" type="text" placeholder="Buscar curso...">
+              <i class="search icon"></i>
+            </div> 
+        </div>
+        <div class="eight wide column right aligned">
+            <%= paginate @courses %>
+      </div>     
+    </div>     
+  </div>
 
-<h1>Courses</h1>
-
-<table>
+<table class="ui celled table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>Nombre</th>
+      <th colspan="3">Acciones</th>
     </tr>
   </thead>
 
@@ -14,9 +27,17 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= link_to(course) do%>
+            <i class="eye icon"></i>
+          <% end %>
+        </td>
+        <td><%= link_to(edit_course_path(course)) do%>
+            <i class="edit black icon"></i>
+          <% end %></td>
+        <td><%= link_to(course,method: :delete, data: { confirm: 'Are you sure?' }  ) do%>
+            <i class="trash alternate red icon"></i>
+          <% end %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +45,7 @@
 
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to(new_course_path, class:"ui inverted green button") do %>
+<i class="icon user"></i>Agregar Curso
+<% end %>
+</div>
