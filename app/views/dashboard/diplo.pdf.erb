@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+    <title>Certificación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  </head>
+<%= wicked_pdf_stylesheet_link_tag 'diplo'%>
+  <body>
+    <header>
+        <%= image_tag wicked_pdf_asset_base64('logo-cbcl.jpg') %>
+    </header>
+    <h1>cbcl chile</h1>
+    <div class="content-diplo">
+     <% @student.each do |student| %>
+        <p>Centro de Capacitación y Formación Bancaria de Chile</p>
+<p>En el cumplimiento al Plan de Estudio impartido por esta institución, se otorga el siguiente diploma a:</p>
+            <h3><%= student.name %></h3>
+            <h4>RUT: <%= student.run %></h4>
+        <p>Quien ha aprobado satisfactoriamente la capacitación de:</p>
+            <h2>Cajero Bancario en <%= student.courses.map(&:name).join('y ')  %></h2>
+        <p>Extendiéndose el presente de acuerdo a las disposiciones legales vigentes.</p>
+    
+    <div class="firm">
+        <%= image_tag wicked_pdf_asset_base64("selloyfirmaCBCL.png") %>
+        <div class="director">
+            <div class="line"></div>
+            <p>Gonzalo Gálves Fuetes</p>
+            <p>Director Académico</p>
+        </div>
+    </div>
+    <% end %>
+    
+    </div>
+    <footer>
+        <a href="mailto:coordinacion@cbclvirtual.cl">CBCL - París 838, of. 305, 306, piso 2, Santiago. coordinacion@cbclvirtual.cl</a>
+    </footer>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard/home', to: 'dashboard#home'
   get 'certification/:run' , to: 'dashboard#student_certification', as:'certification', :defaults=>{ :format => 'pdf'}
+  get 'diploma/:run' , to: 'dashboard#student_diploma', as:'diploma', :defaults=>{ :format => 'pdf'}
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
