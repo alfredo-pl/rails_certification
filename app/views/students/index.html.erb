@@ -4,10 +4,13 @@
   <div class="ui grid">
     <div class="row">
         <div class="ui search eight wide column">
-            <div class="ui icon input">
-              <input class="prompt" type="text" placeholder="Buscar estudiante...">
-              <i class="search icon"></i>
+        <%= search_form_for @q do |f| %>
+            <div class="ui action input"">
+            <%= f.search_field :name_or_run_or_email_cont,  placeholder: "Buscar estudiante" %>
+            <%= f.submit('Search' , class:"ui teal button") %>
+        <% end %>
             </div> 
+         <%#      <input class="prompt" type="text" placeholder="Buscar estudiante..."> %>
         </div>
         <div class="eight wide column right aligned">
             <%= paginate @students %>
