@@ -7,14 +7,11 @@
         </div>    
         <div class="ui eight column mt-2">
         <%= render 'form', student: @student %>
-        <div class="ui two column centered grid">
+        <div class="ui column left grid">
             <div class="extra content column mt-2">
-                <div class="ui two buttons">
+                <div class="ui buttons">
                     <%= link_to(students_path,class:"ui inverted green button") do%>
                         <i class="chevron left black icon"></i>
-                    <% end %>
-                    <%= link_to( @student ,class:"ui inverted blue button") do%>
-                        <i class="eye black icon"></i>
                     <% end %>
                 </div>
             </div>
