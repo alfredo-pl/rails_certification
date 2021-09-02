@@ -12,38 +12,49 @@
   <% end %>
 <div class="fields">
   <div class="six wide field">
-    <%= form.label :name %>
+    <%= form.label :name, "Nombre" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="four wide field">
-    <%= form.label :run %>
+    <%= form.label :run, "Run" %>
     <%= form.text_field :run %>
   </div>
 
   <div class="six wide field">
-    <%= form.label :email %>
+    <%= form.label :email, "Email" %>
     <%= form.text_field :email %>
   </div>
 </div>
   <div class="field">
-    <%= form.label :address %>
+    <%= form.label :address , "Dirección"%>
     <%= form.text_field :address %>
   </div>
 <div class="fields">
   <div class="eight wide field">
-    <%= form.label :phone %>
+    <%= form.label :region , "Región"%>
+    <%= form.text_field :region %>
+  </div>
+
+  <div class="eight wide field">
+    <%= form.label :commune, "Comuna" %>
+    <%= form.text_field :commune %>
+  </div>
+</div>
+<div class="fields">
+  <div class="eight wide field">
+    <%= form.label :phone , "Teléfono"%>
     <%= form.text_field :phone %>
   </div>
 
   <div class="eight wide field">
-    <%= form.label :generation %>
+    <%= form.label :generation , "Generación"%>
     <%= form.number_field :generation %>
   </div>
 </div>
 <div class="fields">
 <div class="eight wide field">
-    <%= form.label :courses %>
+    <%= form.label :courses, "Cursos" %>
       <%= form.collection_check_boxes(:course_ids,
         Course.all,
         :id,
@@ -54,12 +65,12 @@
     <% end %>
 </div>
   <div class="eight wide field">
-    <%= form.label :end_date %>
+    <%= form.label :end_date , "Fecha de egreso"%>
     <%= form.date_select :end_date %>
   </div>
 </div>
 
   <div class="actions">
-    <%= form.submit(class:"ui large teal submit button")%>
+    <%= form.submit("Suministrar",class:"ui large teal submit button")%>
   </div>
 <% end %>
