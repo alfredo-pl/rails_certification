@@ -1,7 +1,7 @@
 <div class="ui middle aligned center aligned grid h-100 bg-one">
     <div class="row">
       <div class="five wide column">
-    <%=image_tag 'logo-cbcl.jpg', class:"image" , style:"height:150px; widht:auto;"%>
+    <%=image_tag 'logo-cbcl.jpg', class:"image" %>
   <div class="ui teal header">
     <h1 class="content">Obtención de Certificados</h1>
   </div>
@@ -24,20 +24,20 @@
        
               <table class="ui teal celled table">
                 <thead>
-                  <tr><th>NAME</th>
+                  <tr><th>NOMBRE</th>
                   <th>RUN</th>
                   <th>EMAIL</th>
-                  <th>GENERATION</th>
-                  <th>CERTIFICATION</th>
+                  <th>GENERACIÓN</th>
+                  <th>CERTIFICACIÓN</th>
                 </tr></thead>
                 <tbody>
                   <% @student.each do |student| %>
                       <tr>
-                      <td data-label="NAME"><%=student.name%></td>
+                      <td data-label="NOMBRE"><%=student.name%></td>
                       <td data-label="RUN"><%=student.run%></td>
                       <td data-label="EMAIL"><%=student.email%></td>
-                      <td data-label="GENERATION"><%=student.generation%></td>
-                      <td data-label="CERTIFICATION">
+                      <td data-label="GENERACIÓN"><%=student.generation%></td>
+                      <td data-label="CERTIFICACIÓN">
                         <%= link_to(certification_path(student.run),class:"ui right labeled olive inverted icon button") do%>
                             Certificación<i class="download icon"></i>
                         <% end %>
