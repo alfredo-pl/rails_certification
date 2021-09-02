@@ -6,7 +6,7 @@
         <div class="ui search eight wide column">
         <%= search_form_for @q do |f| %>
             <div class="ui action input"">
-            <%= f.search_field :name_or_run_or_email_cont,  placeholder: "Buscar estudiante" %>
+            <%= f.search_field :name_or_run_or_email_or_region_or_commune_cont,  placeholder: "Buscar estudiante" %>
             <%= f.submit('Search' , class:"ui teal button") %>
         <% end %>
             </div> 
