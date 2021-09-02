@@ -1,39 +1,106 @@
-<p id="notice"><%= notice %></p>
+<%= render 'nav/nav' %>
+<div class="ui container-fluid px-5 vh-100">
+  <div class="ui very padded segment mt-2 f-center">
+    <div class="ui compact segment">
+      <h2 class="ui teal header column row">DATOS DEL ESTUDIANTE</h2>
+      <div class="ui centered grid">
+        <div class="row">
+          <div class="five wide column">
+            <h3 class="ui header">
+            Nombre:
+              <div class="sub header">
+                <%= @student.name %>
+                  <i class="user circle icon"></i>
+              </div>
+            </h3>
+          </div>
+        </div>
+        <div class="two column row">
+          <div class="column">
+            <h4 class="ui header">
+              Run:
+              <div class="sub header">
+                <%= @student.run %>
+              </div>
+            </h4>
+          </div>
+          <div class="column">
+               <h4 class="ui header">
+            Email:
+              <div class="sub header">
+                <%= @student.email %>
+              </div>
+            </h4>
+          </div>
+        </div>
+       
+        <div class="three column row">
+          <div class="column">
+            <h4 class="ui header">
+              Teléfono:
+              <div class="sub header">
+                <%= @student.phone %>
+              </div>
+            </h4>
+          </div>
+          <div class="column">
+            <h4 class="ui header">
+              Generación:
+              <div class="sub header">
+                <%= @student.generation %>
+              </div>
+            </h4>
+          </div>
+          <div class="column">
+            <h4 class="ui header">
+              Culminación:
+              <div class="sub header">
+                <%= @student.end_date %>
+              </div>
+            </h4>
+          </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+        </div>
+        <div class="three column row">
+          <div class="column">
+            <h4 class="ui header">
+              Dirección:
+              <div class="sub header">
+                <%= @student.run %>
+              </div>
+            </h4>
+          </div>
+          <div class="column">
+            <h4 class="ui header">
+              Región:
+              <div class="sub header">
+                <%= @student.run %>
+              </div>
+            </h4>
+          </div>
+          <div class="column">
+            <h4 class="ui header">
+              Comuna:
+              <div class="sub header">
+                <%= @student.run %>
+              </div>
+            </h4>
+          </div>
+        </div>
+        <div class="five wide row">
+          <div class="extra content">
+            <div class="ui two buttons">
+              <%= link_to(students_path ,class:"ui inverted blue button") do%>
+                <i class="chevron left black icon"></i>
+              <% end %>
+              <%= link_to(edit_student_path(@student),class:"ui inverted green button") do%>
+                <i class="edit black icon"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
 
-<p>
-  <strong>Run:</strong>
-  <%= @student.run %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @student.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @student.phone %>
-</p>
-
-<p>
-  <strong>Generation:</strong>
-  <%= @student.generation %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @student.end_date %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
