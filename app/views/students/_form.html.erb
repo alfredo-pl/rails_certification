@@ -1,4 +1,4 @@
-<%= form_with(model: student) do |form| %>
+<%= form_with(model: student, html: {class:  "ui large form"}) do |form| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -10,53 +10,56 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="fields">
+  <div class="six wide field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="four wide field">
     <%= form.label :run %>
     <%= form.text_field :run %>
   </div>
 
-  <div class="field">
+  <div class="six wide field">
     <%= form.label :email %>
     <%= form.text_field :email %>
   </div>
-
+</div>
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address %>
   </div>
-
-  <div class="field">
+<div class="fields">
+  <div class="eight wide field">
     <%= form.label :phone %>
     <%= form.text_field :phone %>
   </div>
 
-  <div class="field">
+  <div class="eight wide field">
     <%= form.label :generation %>
     <%= form.number_field :generation %>
   </div>
-<div class="field">
+</div>
+<div class="fields">
+<div class="eight wide field">
     <%= form.label :courses %>
       <%= form.collection_check_boxes(:course_ids,
         Course.all,
         :id,
         :name) do |b| %>
-        <%= b.label class:"label-checkbox" do%>
-        <%=b.check_box + b.text%>
+        <%= b.label do%>
+        <%=b.check_box(class:"ui radio checkbox") + b.text%>
       <%end%>
     <% end %>
 </div>
-  <div class="field">
+  <div class="eight wide field">
     <%= form.label :end_date %>
     <%= form.date_select :end_date %>
   </div>
+</div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit(class:"ui large teal submit button")%>
   </div>
 <% end %>
