@@ -1,3 +1,10 @@
 $(document).ready(function () {
-    console.log("aqui esta")
+    $('.message .close')
+    .on('click', function() {
+      $(this)
+        .closest('.message')
+        .transition('fade')
+      ;
+    })
+  ;
 })

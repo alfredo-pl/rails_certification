@@ -12,9 +12,22 @@
   </head>
 
   <body>
-  
-    <p class="notice m-0"><%= notice %></p>
-    <p class="alert m-0"><%= alert %></p>  
+  <%if alert %>
+  <div class="ui negative message">
+    <i class="close icon"></i>
+    <div class="header notice">
+     <%= alert %>
+    </div>
+  </div>
+  <% end %>
+  <%if notice %>
+  <div class="ui success message">
+    <i class="close icon"></i>
+    <div class="header alert">
+      <%= notice %> 
+    </div>
+  </div>
+    <% end %>
       <%= yield %>
          
       <%if params[:controller] == 'courses' || params[:controller] == 'students'|| params[:controller] == 'dashboard'%>
