@@ -1,8 +1,43 @@
-<p id="notice"><%= notice %></p>
+<%= render 'nav/nav' %>
+<div class="ui container-fluid px-5 vh-100">
+  <div class="ui very padded segment mt-2 f-center">
+    <div class="ui compact segment">
+      <h2 class="ui teal header column row">DATOS DEL CURSO</h2>
+      <div class="ui centered grid">
+        <div class="row">
+          <div class="column">
+            <h2 class="ui header">
+              <i class=" certificate yellow icon"></i>
+              <div class="content">
+                <%= @course.name %>
+                <div class="sub header">Certificación</div>
+              </div>
+            </h2>
+          </div>
+        </div>
+       
+        <div class="five wide row">
+          <div class="extra content">
+            <div class="ui two buttons">
+              <%= link_to(courses_path ,class:"ui inverted blue button") do%>
+                <i class="chevron left black icon"></i>
+              <% end %>
+              <%= link_to(edit_course_path(@course),class:"ui inverted green button") do%>
+                <i class="edit black icon"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
 
 <p>
   <strong>Name:</strong>
-  <%= @course.name %>
+  
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

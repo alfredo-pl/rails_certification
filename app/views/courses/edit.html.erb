@@ -1,6 +1,21 @@
-<h1>Editing Course</h1>
+<%= render 'nav/nav' %>
+<div class="ui container-fluid px-5">
 
-<%= render 'form', course: @course %>
-
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+    <div class="ui very padded segment mt-2 ">
+        <div class="column">
+            <h2 class="ui teal header">EDITANDO CURSO</h2>
+        </div>    
+        <div class="ui eight column mt-2">
+        <%= render 'form', course: @course %>
+        <div class="ui column left grid">
+            <div class="extra content column mt-2">
+                <div class="ui buttons">
+                    <%= link_to(courses_path,class:"ui inverted green button") do%>
+                        <i class="chevron left black icon"></i>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
