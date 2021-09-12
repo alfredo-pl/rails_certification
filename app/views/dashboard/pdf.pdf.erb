@@ -16,7 +16,7 @@
         <p>C.B.C.L CHILE, Centro de Capacitación y Formación Bancaria de Chile, certifica que </p>
             <h3><%= student.name %>, RUT <%= student.run %></h3>
         <p>ha realizado el curso:</p>
-            <h3>Cajero Bancario en <%= student.courses.map(&:name).join('y ')  %></h3>
+            <h3>Cajero Bancario en <%= student.courses.map(&:name).join(' y ')  %></h3>
         <p>cumpliendo con el correspondiente Plan de Estudio del Programa Especial de
         Inserción Laboral, contemplado en los estatutos de nuestra institución de
         capacitación, obteniendo aprobación satisfactoria en las evaluaciones del curso.</p>
