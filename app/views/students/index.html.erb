@@ -66,6 +66,9 @@
 </table>
 
 <br>
+<%= link_to(students_path(format: "csv"), class:"ui black button") do %>
+<i class="icon download"></i>Reporte
+<% end %>
 
 <%= link_to(new_student_path, class:"ui inverted green button") do %>
 <i class="icon user"></i>Agregar estudiante

@@ -12,6 +12,7 @@ gem 'kaminari'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'ransack'
+gem 'csv'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

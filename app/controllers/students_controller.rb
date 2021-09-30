@@ -5,9 +5,13 @@ class StudentsController < ApplicationController
   # GET /students or /students.json
   def index
     @q = Student.ransack(params[:q])
-    @students = @q.result(distinct: true).page(params[:page])
+    @students = @q.result(distinct: true)
+    respond_to do |format|
+      format.html { @students = @students.page(params[:page]) }
+      format.csv {send_data @students.to_csv, filename: "students.csv" }
+    end
   end
-
+ 
   # GET /students/1 or /students/1.json
   def show
   end
