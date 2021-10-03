@@ -43,7 +43,7 @@
       ["Región de Los Lagos",14], ["Región Aisén del Gral. Carlos Ibáñez del Campo",15],
       ["Región de Magallanes y de la Antártica Chilena",16]] %>
   </div>
-<%if student.commune.empty?%>
+<%if student.region.to_i == 0%>
 <div class="eight wide disabled field">
     <%= form.label :commune, "Comuna" %>
     <%= form.select :commune, ["- Selecciona una comuna -"] %>
@@ -84,6 +84,9 @@
     <%= form.date_select :end_date %>
   </div>
 </div>
+<div class="fields">
+    <%= form.hidden_field :checkcode , value: @code%>
+  </div>
 
   <div class="actions">
     <%= form.submit("Suministrar",class:"ui large teal submit button")%>
