@@ -9,4 +9,14 @@ class Student < ApplicationRecord
             end
         end
     end
+
+    def name_region
+      regiones =  ["N/R","Arica y Parinacota","Tarapacá","Antofagasta","Atacama",
+      "Coquimbo","Valparaíso","Región Metropolitana de Santiago",
+      "Región del Libertador Gra. Bernardo O’Higgins","Región del Maule","Región de Ñuble",
+      "Región del Biobío","Región de la Araucanía", "Región de Los Ríos","Región de Los Lagos",
+      "Región Aisén del Gral. Carlos Ibáñez del Campo","Región de Magallanes y de la Antártica Chilena"] 
+
+      nombre = regiones[region.to_i]
+    end
 end
