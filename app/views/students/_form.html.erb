@@ -32,15 +32,30 @@
   </div>
 <div class="fields">
   <div class="eight wide field">
-    <%= form.label :region , "Región"%>
-    <%= form.text_field :region %>
+  <%= form.label :region, "Región" %>
+    <%= form.select :region,
+      [["- Seleccionar región -",0],["Arica y Parinacota",1],
+      ["Tarapacá",2], ["Antofagasta",3], ["Atacama",4],
+      ["Coquimbo",5],["Valparaíso",6],["Región Metropolitana de Santiago",7],
+      ["Región del Libertador Gral. Bernardo O’Higgins",8],
+      ["Región del Maule",9], ["Región de Ñuble",10],["Región del Biobío",11],
+      ["Región de la Araucanía", 12],["Región de Los Ríos", 13],
+      ["Región de Los Lagos",14], ["Región Aisén del Gral. Carlos Ibáñez del Campo",15],
+      ["Región de Magallanes y de la Antártica Chilena",16]] %>
   </div>
-
-  <div class="eight wide field">
+<%if student.commune.empty?%>
+<div class="eight wide disabled field">
     <%= form.label :commune, "Comuna" %>
-    <%= form.text_field :commune %>
+    <%= form.select :commune, ["- Selecciona una comuna -"] %>
   </div>
 </div>
+<% else %>
+  <div class="eight wide field">
+    <%= form.label :commune, "Comuna" %>
+    <%= form.select :commune , [student.commune]%>
+  </div>
+</div>
+<% end %>
 <div class="fields">
   <div class="eight wide field">
     <%= form.label :phone , "Teléfono"%>
