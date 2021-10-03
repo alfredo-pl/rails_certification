@@ -15,7 +15,7 @@
             </h3>
           </div>
         </div>
-        <div class="two column row">
+        <div class="three column row">
           <div class="column">
             <h4 class="ui header">
               Run:
@@ -32,14 +32,22 @@
               </div>
             </h4>
           </div>
-        </div>
-       
-        <div class="three column row">
           <div class="column">
             <h4 class="ui header">
               Teléfono:
               <div class="sub header">
                 <%= @student.phone %>
+              </div>
+            </h4>
+          </div>
+        </div>
+       
+        <div class="three column row">
+         <div class="column">
+               <h4 class="ui header">
+            Código Verificación:
+              <div class="sub header">
+                <%= @student.checkcode %>
               </div>
             </h4>
           </div>
