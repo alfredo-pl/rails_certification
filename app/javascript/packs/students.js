@@ -434,9 +434,9 @@ const data = [
     })
   ;
 
-  let region = $("#student_region").val();
   $("#student_region").change(
     ()=>{
+      let region = $("#student_region").val();
       //console.log(region)
       if ( region != "0" ){
         $(".disabled").addClass("selected");
